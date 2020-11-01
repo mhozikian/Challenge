@@ -8,13 +8,13 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
-public class GetLocation {
+public class GetLocationUseCase {
     /*Establece el margen de error*/
     private static final double EPSILON = 0.01;
 
     private final InMemoryCoordinateRepository repository;
 
-    public GetLocation(final InMemoryCoordinateRepository repository) {
+    public GetLocationUseCase(final InMemoryCoordinateRepository repository){
         this.repository = repository;
     }
 
@@ -95,25 +95,28 @@ public class GetLocation {
         return coordinate;
     }
 
-    public Coordinate getLocation(List<Double> distances){
+    public Coordinate getLocation(List<Double> distances) throws Exception{
         double px0, py0, r0;
         double px1, py1, r1;
         double px2, py2, r2;
+
         /*Para cada distancia obtengo los puntos x e y de sus coordenadas
-        * que asumo almacenadas*/
+         * que asumo almacenadas*/
         List<Coordinate> coordinates = distances.stream().map(
                 distance -> this.repository.getCoordinates(distance)).collect(toList());
+
         /*Se que son tres, asigno los resultados obtenidos a las variables que seran parametro en
-        * la funcion de calculo*/
+         * la funcion de calculo*/
         px0 = coordinates.get(0).getLatitude();
         py0 = coordinates.get(0).getLongitude();
-        r0  = distances.get(0);
+        r0 = distances.get(0);
         px1 = coordinates.get(1).getLatitude();
         py1 = coordinates.get(1).getLongitude();
-        r1  = distances.get(1);
+        r1 = distances.get(1);
         px2 = coordinates.get(2).getLatitude();
         py2 = coordinates.get(2).getLongitude();
-        r2  = distances.get(2);;
+        r2 = distances.get(2);
+
         return this.threeCircleIntersection(px0, py0, r0, px1, py1, r1, px2, py2, r2);
     }
 }

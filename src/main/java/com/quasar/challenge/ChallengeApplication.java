@@ -1,8 +1,8 @@
 package com.quasar.challenge;
 
 import com.quasar.challenge.domain.entity.Coordinate;
-import com.quasar.challenge.usecases.GetLocation;
-import com.quasar.challenge.usecases.GetMessage;
+import com.quasar.challenge.usecases.GetLocationUseCase;
+import com.quasar.challenge.usecases.GetMessageUseCase;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 
 @SpringBootApplication
-@RestController
+/*@RestController*/
 public class ChallengeApplication {
 
-    private final GetLocation getLocation;
-    private final GetMessage getMessage;
+    private final GetLocationUseCase getLocation;
+    private final GetMessageUseCase getMessage;
 
-    public ChallengeApplication(GetLocation getLocation,
-                                GetMessage getMessage) {
+    public ChallengeApplication(GetLocationUseCase getLocation,
+                                GetMessageUseCase getMessage) {
         this.getLocation = getLocation;
         this.getMessage = getMessage;
     }
@@ -29,7 +29,7 @@ public class ChallengeApplication {
     }
 
     @GetMapping("/hello")
-    public String sayHello(@RequestParam(value = "myName", defaultValue = "World") String name) {
+    public String sayHello(@RequestParam(value = "myName", defaultValue = "World") String name) throws Exception {
         System.out.print("Hello %s!" + name + " inicia");
         /*-500.0, -200.0, 490.0, // circle 1 (center_x, center_y, radius)
           -100.0, -100.0, 425.0, // circle 2 (center_x, center_y, radius)

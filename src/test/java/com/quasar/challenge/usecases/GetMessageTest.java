@@ -11,7 +11,7 @@ package com.quasar.challenge.usecases;
 public class GetMessageTest {
 
     @InjectMocks
-    private GetMessage getMessage;
+    private GetMessageUseCase getMessage;
 
     @Test
     public void GetLocation_getLocation_ShouldReturnCoordinates() {

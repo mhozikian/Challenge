@@ -18,20 +18,20 @@ import java.util.ArrayList;
 public class GetLocationTest {
 
     @InjectMocks
-    private GetLocation getLocation;
+    private GetLocationUseCase getLocation;
 
     @Mock
     private InMemoryCoordinateRepository repository;
 
     @Before
     public void init(){
-        getLocation = new GetLocation(repository);
+        getLocation = new GetLocationUseCase(repository);
         when(repository.getCoordinates(500.0)).thenReturn(new Coordinate(-500.0, -200.0));
         when(repository.getCoordinates(316.2)).thenReturn(new Coordinate(-100.0, -100.0));
         when(repository.getCoordinates(707.07)).thenReturn(new Coordinate(500.0, 100.0));
     }
     @Test
-    public void GetLocation_getLocation_ShouldReturnCoordinates() {
+    public void GetLocation_getLocation_ShouldReturnCoordinates() throws Exception {
         /*List of distances*/
         ArrayList<Double> list = new ArrayList<>();
         list.add(500.0);

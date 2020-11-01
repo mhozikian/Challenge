@@ -5,7 +5,7 @@ import com.quasar.challenge.domain.exception.NoMessageReceivedException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GetMessage {
+public class GetMessageUseCase {
 
     public String getMessage(List<ArrayList<String>> messages){
         ArrayList<String> result;
@@ -22,16 +22,6 @@ public class GetMessage {
                     }
                 }
             }
-/*
-            messages.stream()
-                .map(message -> {
-                    ArrayList<String> actual = elements.stream().filter(second -> !first.equals(second))
-                            .map(second -> computeChange(first, second))
-                            .reduce(first.getAttribute(), (a, b) -> a.add(b))
-                    return new Element(first.getEntry(), newAttribute, first.getValue());
-                }).collect(Collectors.toList()));
-
-*/
         }else{
             throw new NoMessageReceivedException("No message Received");
         }
