@@ -2,7 +2,9 @@ package com.quasar.challenge.infraestructure.model.dto;
 
 import com.quasar.challenge.domain.entity.Coordinate;
 
-public class SOSMessageDTO {
+import java.io.Serializable;
+
+public class SOSMessageDTO implements Serializable{
     private Coordinate position;
     private String message;
 

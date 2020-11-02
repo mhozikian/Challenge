@@ -12,7 +12,7 @@
     <artifactId>challenge</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>challenge</name>
+    <name>Challenge</name>
     <description>Operacion Fuego de Quasar</description>
 
     <properties>
@@ -44,6 +44,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.18.16</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -54,6 +55,11 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
         </dependency>
     </dependencies>
 

@@ -1,53 +1,45 @@
 package com.quasar.challenge;
 
-import com.quasar.challenge.domain.entity.Coordinate;
-import com.quasar.challenge.usecases.GetLocationUseCase;
-import com.quasar.challenge.usecases.GetMessageUseCase;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.ArrayList;
 
 @SpringBootApplication
 /*@RestController*/
 public class ChallengeApplication {
 
-    private final GetLocationUseCase getLocation;
+    /*private final GetLocationUseCase getLocation;
     private final GetMessageUseCase getMessage;
 
     public ChallengeApplication(GetLocationUseCase getLocation,
                                 GetMessageUseCase getMessage) {
         this.getLocation = getLocation;
         this.getMessage = getMessage;
-    }
+    }*/
 
     public static void main(String[] args) {
         SpringApplication.run(ChallengeApplication.class, args);
     }
-
+/*
     @GetMapping("/hello")
     public String sayHello(@RequestParam(value = "myName", defaultValue = "World") String name) throws Exception {
         System.out.print("Hello %s!" + name + " inicia");
         /*-500.0, -200.0, 490.0, // circle 1 (center_x, center_y, radius)
           -100.0, -100.0, 425.0, // circle 2 (center_x, center_y, radius)
            500.0,  100.0, 695.0)*/
-        ArrayList<Double> list = new ArrayList<Double>();
+    /*    ArrayList<Double> list = new ArrayList<Double>();
         list.add(500.0);
         list.add(316.2);
         list.add(707.07);
         Coordinate c = getLocation.getLocation(list);
         return "x= " + c.getLatitude() + " y= " + c.getLongitude() ;
-    }
+    }*/
 
-    @GetMapping("/message")
+   /* @GetMapping("/message")
     public String getMensaje() {
         /*Kenobi:  [“”, “este”, “es”, “un”, “mensaje”]
         Skywalker: [“este”, “”, “un”, “mensaje”]
         Sato:      [“”, ””, ”es”, ””, ”mensaje”]*/
-        ArrayList<String> kenobi = new ArrayList<String>();
+     /*   ArrayList<String> kenobi = new ArrayList<String>();
         kenobi.add("este");
         kenobi.add("es");
         kenobi.add("");
@@ -71,5 +63,5 @@ public class ChallengeApplication {
         list.add(sato);
         String s = getMessage.getMessage(list);
         return s;
-    }
+    }*/
 }

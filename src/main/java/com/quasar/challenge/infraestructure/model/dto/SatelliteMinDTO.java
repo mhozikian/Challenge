@@ -9,8 +9,8 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SatelliteDTO extends SatelliteMinDTO implements Serializable {
-
-    private String name;
+public class SatelliteMinDTO implements Serializable {
+    private double distance;
+    private String[] message;
 
 }
