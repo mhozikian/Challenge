@@ -10,6 +10,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SatelliteMinDTO implements Serializable {
+
     private double distance;
     private String[] message;
 

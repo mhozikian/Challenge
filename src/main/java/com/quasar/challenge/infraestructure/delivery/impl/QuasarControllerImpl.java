@@ -13,7 +13,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Optional;
@@ -60,7 +59,11 @@ public class QuasarControllerImpl implements QuasarController {
             return this.getResponse(sosMessageDTO, response);
         /*Si no se cuenta con la informacion de tres satelites, no puede realizarse el calculo de triangulacion*/
         }else{
-            return new QuasarResponse<>(Constants.CODE_HTTP_ERROR, Constants.NOT_ENOUGH_INFO, null);
+            if (simileSession.size() < 3) {
+                return new QuasarResponse<>(Constants.CODE_HTTP_ERROR, Constants.NOT_ENOUGH_INFO, null);
+            }else{
+                return new QuasarResponse<>(Constants.CODE_HTTP_ERROR, Constants.NOT_QUANTITY, null);
+            }
         }
     }
 
