@@ -1,0 +1,178 @@
+{
+	"id": "bc02f920-0ab8-43ac-ab33-e91497490c56",
+	"name": "Mercado Libre Quasar",
+	"description": null,
+	"auth": null,
+	"events": null,
+	"variables": null,
+	"order": [
+		"1cb8e7a6-cc29-479f-ae77-89eb4d953baa",
+		"fef30513-2ba3-4d16-840e-aa0989b67679",
+		"30179e2f-d020-4791-929d-db47934c413e",
+		"73d576da-fa80-4329-ac18-c0b07602b4cf",
+		"37c603d3-228c-434d-916a-775207955be4",
+		"2086dc61-15f9-4fbc-a72d-4dcbf4ed66e2"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "1cb8e7a6-cc29-479f-ae77-89eb4d953baa",
+			"name": "topsecret",
+			"url": "https://challenge-app-ml.herokuapp.com/topsecret",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "[\r\n{\r\n\"name\": \"kenobi\",\r\n\"distance\": 500.0,\r\n\"message\": [\"este\", \"\", \"\", \"mensaje\", \"\"]\r\n},\r\n{\r\n\"name\": \"skywalker\",\r\n\"distance\": 316.2,\r\n\"message\": [\"\", \"es\", \"\", \"\", \"secreto\"]\r\n},\r\n{\r\n\"name\": \"sato\",\r\n\"distance\": 707.07,\r\n\"message\": [\"este\", \"\", \"un\", \"\", \"\"]\r\n}\r\n]",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "2086dc61-15f9-4fbc-a72d-4dcbf4ed66e2",
+			"name": "Reset data",
+			"url": "https://challenge-app-ml.herokuapp.com/resetLocalMemory",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\r\n\t\"distance\": 707.07,\r\n\t\"message\": [\"este\", \"\", \"un\", \"\", \"\"]\r\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "30179e2f-d020-4791-929d-db47934c413e",
+			"name": "topsecret split skywalker",
+			"url": "https://challenge-app-ml.herokuapp.com/topsecret_split?name=skywalker",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "name",
+					"value": "skywalker",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\r\n\t\"distance\": 316.2,\r\n\t\"message\": [\"\", \"es\", \"\", \"\", \"secreto\"]\r\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "37c603d3-228c-434d-916a-775207955be4",
+			"name": "get topsecret_split",
+			"url": "https://challenge-app-ml.herokuapp.com/topsecret_split",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "73d576da-fa80-4329-ac18-c0b07602b4cf",
+			"name": "topsecret split kenobi",
+			"url": "https://challenge-app-ml.herokuapp.com/topsecret_split?name=kenobi",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "name",
+					"value": "kenobi",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\r\n\t\"distance\": 500.0,\r\n\t\"message\": [\"este\", \"\", \"\", \"mensaje\", \"\"]\r\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "fef30513-2ba3-4d16-840e-aa0989b67679",
+			"name": "topsecret split sato",
+			"url": "https://challenge-app-ml.herokuapp.com/topsecret_split?name=sato",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "name",
+					"value": "sato",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\r\n\t\"distance\": 707.07,\r\n\t\"message\": [\"este\", \"\", \"un\", \"\", \"\"]\r\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		}
+	]
+}
